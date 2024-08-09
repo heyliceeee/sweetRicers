@@ -1,0 +1,19 @@
+.custom-menu.ant-menu-horizontal > .ant-menu-item-selected,
+.custom-menu.ant-menu-horizontal > .ant-menu-submenu-selected {
+  color: #ffff; /* Cor do texto quando ativo */
+  border: 2px solid #5664ff; /* Cor da borda inferior quando ativo */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 1px #5664ff;
+  transition: all 0.3s ease;
+  background-color: #2f2b6a;
+}
+
+.custom-menu.ant-menu-horizontal > .ant-menu-item-selected::after,
+.custom-menu.ant-menu-horizontal > .ant-menu-submenu-selected::after {
+  border-bottom-color: #2f2b6a; /* Cor da borda inferior quando ativo */
+}
+
+.custom-menu2.ant-menu-horizontal > .ant-menu-item {
+  color: #ffff;
+  border-radius: 10px;
+}
