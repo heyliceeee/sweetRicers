@@ -51,7 +51,13 @@ const itemsMenu3 = [
   {
     key: "loginviasteam",
     icon: <LoginOutlined />,
-    label: "Login via Steam",
+
+    label: (
+      <a href="https://steamcommunity.com/" target="_blank" rel="noopener noreferrer">
+        Login via Steam
+      </a>
+    ),
+
     style: {
       border: "2px solid #5664ff",
       borderRadius: "10px",
