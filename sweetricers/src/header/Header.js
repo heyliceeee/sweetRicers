@@ -89,7 +89,7 @@ function Header({ setCurrentPage }) {
   };
 
   return (
-    <Row>
+    <Row style={{marginTop: "20px"}}>
       <Col xs={12} sm={12} md={2} lg={2}>
         <Image src={logo} height="85%" preview={false} />
       </Col>
