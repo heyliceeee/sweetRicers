@@ -95,7 +95,11 @@ function Header({ setCurrentPage }) {
       </Col>
 
       <Col xs={12} sm={12} md={0} lg={0} style={{ textAlign: "right" }}>
-        <Button type="primary" onClick={showDrawer} style={{backgroundColor: "transparent",}}>
+        <Button
+          type="primary"
+          onClick={showDrawer}
+          style={{ backgroundColor: "transparent" }}
+        >
           <MenuOutlined />
         </Button>
       </Col>
@@ -113,10 +117,7 @@ function Header({ setCurrentPage }) {
               style={{
                 borderBottom: "none",
                 backgroundColor: "transparent",
-
-                border: "2px solid #ffff",
               }}
-
               theme="dark"
             />
           </Col>
@@ -129,10 +130,7 @@ function Header({ setCurrentPage }) {
               style={{
                 borderBottom: "none",
                 backgroundColor: "transparent",
-
-                border: "2px solid #ffff",
               }}
-
               theme="dark"
             />
           </Col>
@@ -145,10 +143,7 @@ function Header({ setCurrentPage }) {
               style={{
                 borderBottom: "none",
                 backgroundColor: "transparent",
-
-                border: "2px solid #ffff",
               }}
-
               theme="dark"
             />
           </Col>
