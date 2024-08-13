@@ -53,7 +53,11 @@ const itemsMenu3 = [
     icon: <LoginOutlined />,
 
     label: (
-      <a href="https://steamcommunity.com/" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://steamcommunity.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Login via Steam
       </a>
     ),
@@ -79,15 +83,16 @@ function Header({ setCurrentPage }) {
     <Row>
       <Col
         className="gutter-row logo-column"
-        xs={2}
-        sm={2}
-        md={2}
+        xs={24}
+        sm={4}
+        md={4}
         lg={2}
         style={{
           display: "flex",
           justifyContent: "left",
           alignItems: "center",
           height: "60px",
+          border: "2px solid #ffff",
         }}
       >
         <Image src={logo} height="85%" preview={false} />
@@ -95,15 +100,16 @@ function Header({ setCurrentPage }) {
 
       <Col
         className="gutter-row"
-        xs={3}
-        sm={10}
-        md={10}
-        lg={10}
+        xs={24}
+        sm={20}
+        md={20}
+        lg={9}
         style={{
           display: "flex",
           justifyContent: "left",
           alignItems: "center",
           height: "60px",
+          border: "2px solid #ffff",
         }}
       >
         <Menu
@@ -122,15 +128,16 @@ function Header({ setCurrentPage }) {
 
       <Col
         className="gutter-row"
-        xs={2}
-        sm={9}
-        md={9}
-        lg={9}
+        xs={24}
+        sm={17}
+        md={12}
+        lg={8}
         style={{
           display: "flex",
           justifyContent: "left",
           alignItems: "center",
           height: "60px",
+          border: "2px solid #ffff",
         }}
       >
         <Menu
@@ -147,16 +154,16 @@ function Header({ setCurrentPage }) {
 
       <Col
         className="gutter-row"
-        xs={3}
-        sm={3}
-        md={3}
-        lg={3}
-        xl={3}
+        xs={24}
+        sm={7}
+        md={12}
+        lg={5}
         style={{
           display: "flex",
           justifyContent: "right",
           alignItems: "center",
           height: "60px",
+          border: "2px solid #ffff",
         }}
       >
         <Menu
