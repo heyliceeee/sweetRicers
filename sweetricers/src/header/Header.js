@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Menu, Input, Row, Col, Image, Divider, Button, Dropdown } from "antd";
-import { TagOutlined, LoginOutlined } from "@ant-design/icons";
+import { Menu, Drawer, Row, Col, Image, Button } from "antd";
+import { TagOutlined, LoginOutlined, MenuOutlined } from "@ant-design/icons";
 
 import logo from "../images/logooo.png";
 import "./Header.css";
@@ -72,6 +72,7 @@ const itemsMenu3 = [
 
 function Header({ setCurrentPage }) {
   const [current, setCurrent] = useState("inicio");
+  const [visible, setVisible] = useState(false);
 
   const onClick = (e) => {
     console.log("click ", e);
@@ -79,104 +80,105 @@ function Header({ setCurrentPage }) {
     setCurrentPage(e.key);
   };
 
+  const showDrawer = () => {
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    setVisible(false);
+  };
+
   return (
     <Row>
-      <Col
-        className="gutter-row logo-column"
-        xs={24}
-        sm={4}
-        md={4}
-        lg={2}
-        style={{
-          display: "flex",
-          justifyContent: "left",
-          alignItems: "center",
-          height: "60px",
-          border: "2px solid #ffff",
-        }}
-      >
+      <Col xs={12} sm={12} md={2} lg={2}>
         <Image src={logo} height="85%" preview={false} />
       </Col>
 
-      <Col
-        className="gutter-row"
-        xs={24}
-        sm={20}
-        md={20}
-        lg={9}
-        style={{
-          display: "flex",
-          justifyContent: "left",
-          alignItems: "center",
-          height: "60px",
-          border: "2px solid #ffff",
-        }}
-      >
-        <Menu
-          onClick={onClick}
-          selectedKeys={[current]}
-          mode="horizontal"
-          items={itemsMenu1}
-          className="custom-menu"
-          selectable={false}
-          style={{
-            borderBottom: "none",
-            backgroundColor: "transparent",
-          }}
-        />
+      <Col xs={12} sm={12} md={0} lg={0} style={{ textAlign: "right" }}>
+        <Button type="primary" onClick={showDrawer} style={{backgroundColor: "transparent",}}>
+          <MenuOutlined />
+        </Button>
       </Col>
 
-      <Col
-        className="gutter-row"
-        xs={24}
-        sm={17}
-        md={12}
-        lg={8}
-        style={{
-          display: "flex",
-          justifyContent: "left",
-          alignItems: "center",
-          height: "60px",
-          border: "2px solid #ffff",
-        }}
-      >
-        <Menu
-          mode="horizontal"
-          items={itemsMenu2}
-          className="custom-menu2"
-          selectable={false}
-          style={{
-            borderBottom: "none",
-            backgroundColor: "transparent",
-          }}
-        />
+      <Col xs={0} sm={0} md={22} lg={22}>
+        <Row>
+          <Col md={10} lg={9}>
+            <Menu
+              onClick={onClick}
+              selectedKeys={[current]}
+              mode="horizontal"
+              items={itemsMenu1}
+              className="custom-menu"
+              selectable={false}
+              style={{
+                borderBottom: "none",
+                backgroundColor: "transparent",
+
+                border: "2px solid #ffff",
+              }}
+
+              theme="dark"
+            />
+          </Col>
+          <Col md={7} lg={8}>
+            <Menu
+              mode="horizontal"
+              items={itemsMenu2}
+              className="custom-menu2"
+              selectable={false}
+              style={{
+                borderBottom: "none",
+                backgroundColor: "transparent",
+
+                border: "2px solid #ffff",
+              }}
+
+              theme="dark"
+            />
+          </Col>
+          <Col md={5} lg={5}>
+            <Menu
+              mode="horizontal"
+              items={itemsMenu3}
+              className="custom-menu3"
+              selectable={false}
+              style={{
+                borderBottom: "none",
+                backgroundColor: "transparent",
+
+                border: "2px solid #ffff",
+              }}
+
+              theme="dark"
+            />
+          </Col>
+        </Row>
       </Col>
 
-      <Col
-        className="gutter-row"
-        xs={24}
-        sm={7}
-        md={12}
-        lg={5}
+      <Drawer
+        title="Menu"
+        placement="right"
+        onClose={onClose}
+        visible={visible}
         style={{
-          display: "flex",
-          justifyContent: "right",
-          alignItems: "center",
-          height: "60px",
-          border: "2px solid #ffff",
+          background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
+        }}
+        bodyStyle={{
+          background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
+        }}
+        headerStyle={{
+          color: "white",
         }}
       >
         <Menu
-          mode="horizontal"
-          items={itemsMenu3}
-          className="custom-menu3"
-          selectable={false}
+          items={[...itemsMenu1, ...itemsMenu2, ...itemsMenu3]}
+          mode="vertical"
           style={{
-            borderBottom: "none",
-            backgroundColor: "transparent",
+            background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
           }}
+          theme="dark"
         />
-      </Col>
+      </Drawer>
     </Row>
   );
 }
