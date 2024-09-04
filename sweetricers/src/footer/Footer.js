@@ -97,7 +97,7 @@ function Footer() {
         lg={12}
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "flex-end",
           alignItems: "center",
           marginTop: "10px",
           flexDirection: "row",
