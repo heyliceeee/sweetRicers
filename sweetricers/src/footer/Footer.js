@@ -14,38 +14,64 @@ import waac from "../images/waacLogo.png";
 
 function Footer() {
   return (
-    <Row style={{ marginTop: "20px" }}>
-      <Col xs={2} sm={2} md={4} lg={4} style={{ border: "2px solid #ffff" }}>
+    <Row
+      style={{ marginTop: "20px", padding: "10px" }}
+      justify="space-between"
+      align="middle"
+    >
+      <Col
+        xs={24}
+        sm={13}
+        md={5}
+        lg={5}
+        style={{
+          padding: "10px",
+          textAlign: "center",
+        }}
+      >
         <XOutlined
-          style={{ color: "#ffff", fontSize: "25px", marginRight: "15px" }}
+          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
         />
         <LinkedinFilled
-          style={{ color: "#ffff", fontSize: "25px", marginRight: "15px" }}
+          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
         />
         <FacebookFilled
-          style={{ color: "#ffff", fontSize: "25px", marginRight: "15px" }}
+          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
         />
         <GithubFilled
-          style={{ color: "#ffff", fontSize: "25px", marginRight: "15px" }}
+          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
         />
         <BehanceOutlined
-          style={{ color: "#ffff", fontSize: "25px", marginRight: "15px" }}
+          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
         />
-        <DribbbleOutlined style={{ color: "#ffff", fontSize: "25px" }} />
+        <DribbbleOutlined
+          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
+        />
       </Col>
 
-      <Col xs={14} sm={11} md={8} lg={6} style={{ border: "2px solid #ffff" }}>
+      <Col
+        xs={24}
+        sm={11}
+        md={8}
+        lg={7}
+        style={{
+          marginTop: "10px",
+          textAlign: "center",
+        }}
+      >
         <div
           style={{
             border: "2px solid #1D4C3B",
             borderRadius: "10px",
             backgroundColor: "#1D3E34",
-            height: "25px",
-            width: "185px",
-            alignItems: "center",
-            alignContent: "center",
+            height: "35px",
+            width: "100%",
+            maxWidth: "180px",
+            margin: "0 auto",
             display: "flex",
+            alignItems: "center",
             padding: "0 10px",
+            justifyContent: "center",
           }}
         >
           <div
@@ -58,41 +84,42 @@ function Footer() {
               marginRight: "5px",
             }}
           />
-          <div style={{ color: "#ffff" }}>20 JOGADORES ONLINE</div>
+          <div style={{ color: "#ffff", fontSize: "13px" }}>
+            20 JOGADORES ONLINE
+          </div>
         </div>
       </Col>
 
       <Col
-        xs={8}
-        sm={11}
-        md={12}
-        lg={14}
+        xs={24}
+        sm={24}
+        md={11}
+        lg={12}
         style={{
-          border: "2px solid #ffff",
-          justifyContent: "flex-end",
           display: "flex",
-          gap: "40px",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: "10px",
+          flexDirection: "row",
+          textAlign: "center",
         }}
       >
-        <Image
-          src={pewpew}
-          height="60%"
-          preview={false}
-        />
-        <Image
-          src={waac}
-          height="60%"
-          preview={false}
-        />
-
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "20px",
+            width: "200px",
+          }}
+        >
+          <Image src={pewpew} preview={false} style={{ marginTop: "5px" }} />
+          <Image src={waac} preview={false} />
+        </div>
         <div
           style={{
             color: "#ffff",
-            textAlign: "flex-end",
-            alignContent: "center",
-            alignItems: "center",
-            display: "flex",
-            height: "29px",
+            fontSize: "14px",
+            marginLeft: "20px",
           }}
         >
           © 2024 Alice Dias. Todos os direitos reservados
