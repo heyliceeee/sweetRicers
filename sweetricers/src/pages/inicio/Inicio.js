@@ -34,7 +34,7 @@ function Inicio() {
   const [clickedItem, setClickedItem] = useState(null);
 
   const handleMouseOver = (id, disable) => {
-    if ((disable == false)) {
+    if (disable == false) {
       setHoveredItem(id);
     }
   };
@@ -44,7 +44,7 @@ function Inicio() {
   };
 
   const handleClick = (id, disable) => {
-    if ((disable == false)) {
+    if (disable == false) {
       setClickedItem(id);
     }
   };
@@ -55,7 +55,7 @@ function Inicio() {
       justify="start"
       align="middle"
     >
-      <Col xs={20} sm={12} md={12} lg={10}>
+      <Col xs={19} sm={20} md={21} lg={10}>
         {itemsCol1.map((item) => (
           <div
             key={item.id}
@@ -93,7 +93,7 @@ function Inicio() {
         ))}
       </Col>
 
-      <Col xs={4} sm={12} md={12} lg={2}>
+      <Col xs={5} sm={4} md={3} lg={2}>
         {itemsCol2.map((item) => (
           <div
             key={item.id}
@@ -121,7 +121,7 @@ function Inicio() {
           </div>
         ))}
       </Col>
-      <Col xs={24} sm={12} md={12} lg={12}>
+      <Col xs={24} sm={24} md={24} lg={12}>
         <div
           style={{
             border: "2px solid #5664ff",
