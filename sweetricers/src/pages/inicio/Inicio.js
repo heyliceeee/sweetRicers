@@ -33,16 +33,20 @@ function Inicio() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [clickedItem, setClickedItem] = useState(null);
 
-  const handleMouseOver = (id) => {
-    setHoveredItem(id);
+  const handleMouseOver = (id, disable) => {
+    if ((disable == false)) {
+      setHoveredItem(id);
+    }
   };
 
   const handleMouseOut = () => {
     setHoveredItem(null);
   };
 
-  const handleClick = (id) => {
-    setClickedItem(id);
+  const handleClick = (id, disable) => {
+    if ((disable == false)) {
+      setClickedItem(id);
+    }
   };
 
   return (
@@ -73,16 +77,18 @@ function Inicio() {
               backgroundColor: item.disable ? "transparent" : "#2f2b6a",
               position: "relative",
             }}
-            onMouseOver={() => handleMouseOver(item.id)}
+            onMouseOver={() => handleMouseOver(item.id, item.disable)}
             onMouseOut={handleMouseOut}
-            onClick={() => handleClick(item.id)}
+            onClick={() => handleClick(item.id, item.disable)}
           >
             {item.label.toUpperCase()}
-            <LinkOutlined
-              className={`link-icon ${
-                hoveredItem === item.id ? "link-icon-visible" : ""
-              }`}
-            />
+            {!item.disable && (
+              <LinkOutlined
+                className={`link-icon ${
+                  hoveredItem === item.id ? "link-icon-visible" : ""
+                }`}
+              />
+            )}
           </div>
         ))}
       </Col>
@@ -107,9 +113,9 @@ function Inicio() {
               color: item.disable ? "#5664ff" : "#fff",
               backgroundColor: item.disable ? "transparent" : "#2f2b6a",
             }}
-            onMouseOver={() => handleMouseOver(item.id)}
+            onMouseOver={() => handleMouseOver(item.id, item.disable)}
             onMouseOut={handleMouseOut}
-            onClick={() => handleClick(item.id)}
+            onClick={() => handleClick(item.id, item.disable)}
           >
             {item.label.toUpperCase()}
           </div>
