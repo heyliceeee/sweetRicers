@@ -29,6 +29,33 @@ const itemsCol2 = [
   { id: 9, label: "off", disable: true },
 ];
 
+const caroussel = [
+  {
+    id: 1,
+    title: "UPDATE 1.6",
+    subtitle: "Update Servidores - 16 de julho",
+    photo: "",
+  },
+  {
+    id: 2,
+    title: "UPDATE 1.6",
+    subtitle: "Update Servidores - 16 de julho",
+    photo: "",
+  },
+  {
+    id: 3,
+    title: "UPDATE 1.6",
+    subtitle: "Update Servidores - 16 de julho",
+    photo: "",
+  },
+  {
+    id: 4,
+    title: "UPDATE 1.6",
+    subtitle: "Update Servidores - 16 de julho",
+    photo: "",
+  },
+];
+
 function Inicio() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [clickedItem, setClickedItem] = useState(null);
@@ -51,7 +78,7 @@ function Inicio() {
 
   return (
     <Row
-      style={{ marginTop: "20px", marginBottom: "20px" }}
+      style={{ marginTop: "40px", marginBottom: "20px" }}
       justify="start"
       align="middle"
     >
@@ -121,7 +148,22 @@ function Inicio() {
           </div>
         ))}
       </Col>
+
       <Col xs={24} sm={24} md={24} lg={12}>
+        <div
+          style={{
+            border: "2px solid #5664ff",
+            borderRadius: "10px",
+            height: "100px",
+            marginBottom: "10px",
+          }}
+        >
+          {caroussel.map((item) => (
+            <div>
+              {item.title}
+            </div>
+          ))}
+        </div>
         <div
           style={{
             border: "2px solid #5664ff",
@@ -129,7 +171,6 @@ function Inicio() {
             height: "100px",
           }}
         ></div>
-        <div></div>
       </Col>
     </Row>
   );
