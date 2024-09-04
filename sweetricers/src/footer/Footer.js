@@ -15,8 +15,8 @@ import waac from "../images/waacLogo.png";
 function Footer() {
   return (
     <Row
-      style={{ marginTop: "20px", padding: "10px" }}
-      justify="space-between"
+      style={{ marginTop: "20px", marginBottom: "20px" }}
+      justify="start"
       align="middle"
     >
       <Col
@@ -25,13 +25,10 @@ function Footer() {
         md={5}
         lg={5}
         style={{
-          padding: "10px",
-          textAlign: "center",
+          textAlign: "start",
         }}
       >
-        <XOutlined
-          style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
-        />
+        <XOutlined style={{ color: "#ffff", fontSize: "20px" }} />
         <LinkedinFilled
           style={{ color: "#ffff", fontSize: "20px", margin: "0 10px" }}
         />
