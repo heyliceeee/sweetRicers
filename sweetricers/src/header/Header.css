@@ -17,3 +17,14 @@
   color: #ffff;
   border-radius: 10px;
 }
+
+.custom-menu.ant-menu-horizontal > .ant-menu-item:active,
+.custom-menu.ant-menu-horizontal > .ant-menu-submenu:active {
+  transform: scale(0.95); /* Reduz ligeiramente o tamanho do item ao clicar */
+  transition: transform 0.1s ease; /* Animação suave */
+}
+
+.custom-menu2.ant-menu-horizontal > .ant-menu-item:active {
+  transform: scale(0.95); /* Reduz ligeiramente o tamanho do item ao clicar */
+  transition: transform 0.1s ease; /* Animação suave */
+}

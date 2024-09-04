@@ -1,0 +1,37 @@
+.link-icon {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+
+.link-icon-visible {
+  display: block;
+}
+
+.custom-div:hover .link-icon {
+  display: block;
+}
+
+.custom-div.clicked {
+  box-shadow: 0px 0px 10px 1px #5664ff;
+  transition: all 0.3s ease;
+}
+
+.custom-div:active {
+  transform: scale(0.95);
+  box-shadow: 0px 0px 15px 2px #5664ff;
+}
+
+.custom-div.disabled:hover,
+.custom-div.disabled:active {
+  box-shadow: none;
+  transform: none;
+}
+
+.custom-div.hovered {
+  box-shadow: 0px 0px 10px 1px #5664ff;
+  transition: all 0.3s ease;
+}
