@@ -89,7 +89,7 @@ function Header({ setCurrentPage }) {
   };
 
   return (
-    <Row style={{marginTop: "20px"}}>
+    <Row style={{ marginTop: "20px" }}>
       <Col xs={12} sm={12} md={2} lg={2}>
         <Image src={logo} height="85%" preview={false} />
       </Col>
@@ -134,7 +134,14 @@ function Header({ setCurrentPage }) {
               theme="dark"
             />
           </Col>
-          <Col md={5} lg={5}>
+          <Col
+            md={7}
+            lg={7}
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+            }}
+          >
             <Menu
               mode="horizontal"
               items={itemsMenu3}
