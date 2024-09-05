@@ -18,15 +18,15 @@ const itemsCol1 = [
 ];
 
 const itemsCol2 = [
-  { id: 1, label: "6/12", disable: false },
-  { id: 2, label: "4/12", disable: false },
-  { id: 3, label: "2/12", disable: false },
-  { id: 4, label: "0/12", disable: false },
-  { id: 5, label: "0/20", disable: false },
-  { id: 6, label: "0/12", disable: false },
-  { id: 7, label: "0/47", disable: false },
-  { id: 8, label: "soon", disable: true },
-  { id: 9, label: "off", disable: true },
+  { id: 1, label: "6/12", url: "", disable: false },
+  { id: 2, label: "4/12", url: "", disable: false },
+  { id: 3, label: "2/12", url: "", disable: false },
+  { id: 4, label: "0/12", url: "", disable: false },
+  { id: 5, label: "0/20", url: "", disable: false },
+  { id: 6, label: "0/12", url: "", disable: false },
+  { id: 7, label: "0/47", url: "", disable: false },
+  { id: 8, label: "soon", url: "", disable: true },
+  { id: 9, label: "off", url: "", disable: true },
 ];
 
 const caroussel = [
@@ -59,6 +59,7 @@ const caroussel = [
 function Inicio() {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [clickedItem, setClickedItem] = useState(null);
+  const [URLItem, setURLItem] = useState(null);
 
   const handleMouseOver = (id, disable) => {
     if (disable == false) {
@@ -70,9 +71,12 @@ function Inicio() {
     setHoveredItem(null);
   };
 
-  const handleClick = (id, disable) => {
-    if (disable == false) {
+  const handleClick = (id, disable, url) => {
+    if (!disable) {
       setClickedItem(id);
+      setURLItem(url);
+
+      window.location.href = url;
     }
   };
 
@@ -106,7 +110,7 @@ function Inicio() {
             }}
             onMouseOver={() => handleMouseOver(item.id, item.disable)}
             onMouseOut={handleMouseOut}
-            onClick={() => handleClick(item.id, item.disable)}
+            onClick={() => handleClick(item.id, item.disable, item.url)}
           >
             {item.label.toUpperCase()}
             {!item.disable && (
@@ -142,7 +146,7 @@ function Inicio() {
             }}
             onMouseOver={() => handleMouseOver(item.id, item.disable)}
             onMouseOut={handleMouseOut}
-            onClick={() => handleClick(item.id, item.disable)}
+            onClick={() => handleClick(item.id, item.disable, item.url)}
           >
             {item.label.toUpperCase()}
           </div>
@@ -159,9 +163,7 @@ function Inicio() {
           }}
         >
           {caroussel.map((item) => (
-            <div>
-              {item.title}
-            </div>
+            <div>{item.title}</div>
           ))}
         </div>
         <div
