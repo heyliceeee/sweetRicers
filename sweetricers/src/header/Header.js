@@ -161,7 +161,7 @@ function Header({ setCurrentPage }) {
         title="Menu"
         placement="right"
         onClose={onClose}
-        visible={visible}
+        open={visible}
         style={{
           background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
         }}

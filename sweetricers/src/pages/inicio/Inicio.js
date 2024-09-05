@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Image } from "antd";
+import { Row, Col, Carousel } from "antd";
 import { LinkOutlined } from "@ant-design/icons";
 
 import "./Inicio.css";
@@ -32,27 +32,27 @@ const itemsCol2 = [
 const caroussel = [
   {
     id: 1,
-    title: "UPDATE 1.6",
+    title: "UPDATE 7.16",
     subtitle: "Update Servidores - 16 de julho",
-    photo: "",
+    photo: "https://th.bing.com/th/id/OIG3.tKNZOuD9a56dHIBYinOL?pid=ImgGn",
   },
   {
     id: 2,
-    title: "UPDATE 1.6",
+    title: "UPDATE 7.16",
     subtitle: "Update Servidores - 16 de julho",
-    photo: "",
+    photo: "https://th.bing.com/th/id/OIG3.tKNZOuD9a56dHIBYinOL?pid=ImgGn",
   },
   {
     id: 3,
-    title: "UPDATE 1.6",
+    title: "UPDATE 7.16",
     subtitle: "Update Servidores - 16 de julho",
-    photo: "",
+    photo: "https://th.bing.com/th/id/OIG3.tKNZOuD9a56dHIBYinOL?pid=ImgGn",
   },
   {
     id: 4,
-    title: "UPDATE 1.6",
+    title: "UPDATE 7.16",
     subtitle: "Update Servidores - 16 de julho",
-    photo: "",
+    photo: "https://th.bing.com/th/id/OIG3.tKNZOuD9a56dHIBYinOL?pid=ImgGn",
   },
 ];
 
@@ -85,8 +85,9 @@ function Inicio() {
       style={{ marginTop: "40px", marginBottom: "20px" }}
       justify="start"
       align="middle"
+      gutter={[{ xs: 16, sm: 16, md: 16, lg: 16 }, 16]} // Adiciona espaçamento entre colunas responsivo
     >
-      <Col xs={19} sm={20} md={21} lg={10}>
+      <Col xs={17} sm={19} md={20} lg={9}>
         {itemsCol1.map((item) => (
           <div
             key={item.id}
@@ -124,7 +125,7 @@ function Inicio() {
         ))}
       </Col>
 
-      <Col xs={5} sm={4} md={3} lg={2}>
+      <Col xs={7} sm={5} md={4} lg={3}>
         {itemsCol2.map((item) => (
           <div
             key={item.id}
@@ -135,7 +136,7 @@ function Inicio() {
               border: "2px solid #5664ff",
               borderRadius: "10px",
               marginBottom: "10px",
-              marginRight: "10px",
+              marginRight: "20px",
               fontSize: "20px",
               textAlign: "center",
               height: "50px",
@@ -154,25 +155,111 @@ function Inicio() {
       </Col>
 
       <Col xs={24} sm={24} md={24} lg={12}>
-        <div
-          style={{
-            border: "2px solid #5664ff",
-            borderRadius: "10px",
-            height: "100px",
-            marginBottom: "10px",
-          }}
-        >
+        <Carousel autoplay style={{ marginBottom: "10px", marginTop: "-10px" }}>
           {caroussel.map((item) => (
-            <div>{item.title}</div>
+            <div key={item.title}>
+              <div
+                style={{
+                  border: "2px solid #5664ff",
+                  color: "#fff",
+                  borderRadius: "10px",
+                  textAlign: "start",
+                  backgroundImage:
+                    "url(https://th.bing.com/th/id/OIG3.tKNZOuD9a56dHIBYinOL?pid=ImgGn)",
+                  height: "245px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "end",
+                  position: "relative", // Para permitir a sobreposição do overlay
+                  overflow: "hidden", // Para garantir que o conteúdo fique dentro dos limites
+                }}
+              >
+                {/* Camada preta fina para realçar o texto */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    backgroundColor: "rgba(0, 0, 0, 0.3)", // Fundo preto com opacidade
+                    zIndex: 1,
+                  }}
+                />
+
+                {/* Conteúdo do texto com camada preta atrás */}
+                <div style={{ position: "relative", zIndex: 2 }}>
+                  <h1 style={{ marginLeft: "20px" }}>{item.title}</h1>
+                  <h3 style={{ marginLeft: "20px", marginTop: "-20px" }}>
+                    {item.subtitle}
+                  </h3>
+                </div>
+              </div>
+            </div>
           ))}
+        </Carousel>
+
+        <div style={{ marginTop: "0px" }}>
+          <div
+            style={{
+              border: "2px solid #5664ff",
+              color: "#fff",
+              borderRadius: "10px",
+              textAlign: "start",
+              backgroundImage:
+                "url(https://tse2.mm.bing.net/th?id=OIG3.fh5p5vcO9V77RfvOJOPx&pid=ImgGn)",
+              height: "300px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "end",
+              position: "relative", // Para permitir a sobreposição do overlay
+              overflow: "hidden", // Para garantir que o conteúdo fique dentro dos limites
+            }}
+          >
+            {/* Camada preta fina para realçar o texto */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundColor: "rgba(0, 0, 0, 0.3)", // Fundo preto com opacidade
+                zIndex: 1,
+              }}
+            />
+
+            {/* Conteúdo do texto com camada preta atrás */}
+            <div style={{ position: "relative", zIndex: 2 }}>
+              <h1 style={{ marginLeft: "20px" }}>MISSÕES GUERRILLA ALPHA!</h1>
+
+              <div
+              className="btn-green"
+                style={{
+                  border: "2px solid #1D4C3B",
+                  borderRadius: "10px",
+                  backgroundColor: "#1D3E34",
+                  height: "35px",
+                  width: "100%",
+                  maxWidth: "104px",
+                  margin: "0 auto",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "0 10px",
+                  justifyContent: "center",
+
+                  marginLeft: "20px",
+                  marginBottom: "10px",
+                  marginTop: "-10px",
+                }}
+              >
+                <div style={{ color: "#ffff", fontSize: "13px" }}>
+                  NOVAS MISSÕES
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div
-          style={{
-            border: "2px solid #5664ff",
-            borderRadius: "10px",
-            height: "100px",
-          }}
-        ></div>
       </Col>
     </Row>
   );

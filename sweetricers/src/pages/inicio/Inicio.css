@@ -35,3 +35,8 @@
   box-shadow: 0px 0px 10px 1px #5664ff;
   transition: all 0.3s ease;
 }
+
+.btn-green:hover {
+  box-shadow: 0px 0px 10px 1px #1d4c3b;
+  transition: all 0.3s ease;
+}

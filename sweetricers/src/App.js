@@ -53,54 +53,53 @@ function App() {
         },
       }}
     >
-      <Row
-        gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}
-        style={{
-          borderBottom: "1px solid #34317D",
-          paddingBottom: "10px",
-          background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
-        }}
+      <div
+        style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
       >
-        <Col className="gutter-row" span={2} />
+        <Row
+          gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}
+          style={{
+            borderBottom: "1px solid #34317D",
+            paddingBottom: "10px",
+            background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
+          }}
+        >
+          <Col className="gutter-row" span={2} />
+          <Col className="gutter-row" span={20}>
+            <Header setCurrentPage={setCurrentPage} />
+          </Col>
+          <Col className="gutter-row" span={2} />
+        </Row>
 
-        <Col className="gutter-row" span={20}>
-          <Header setCurrentPage={setCurrentPage} />
-        </Col>
+        <Row
+          gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}
+          style={{
+            borderBottom: "1px solid #34317D",
+            paddingBottom: "10px",
+            background: "linear-gradient(to right, #161C18, #161D19, #161617)",
+            flex: 1, // Adiciona flex: 1 ao conteúdo principal para ocupar o espaço disponível
+          }}
+        >
+          <Col className="gutter-row" span={2} />
+          <Col className="gutter-row" span={20}>
+            {renderContent()}
+          </Col>
+          <Col className="gutter-row" span={2} />
+        </Row>
 
-        <Col className="gutter-row" span={2} />
-      </Row>
-
-      <Row
-        gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}
-        style={{
-          borderBottom: "1px solid #34317D",
-          paddingBottom: "10px",
-          background: "linear-gradient(to right, #161C18, #161D19, #161617)",
-        }}
-      >
-        <Col className="gutter-row" span={2} />
-
-        <Col className="gutter-row" span={20}>
-          {renderContent()}
-        </Col>
-
-        <Col className="gutter-row" span={2} />
-      </Row>
-
-      <Row
-        gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}
-        style={{
-          background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
-        }}
-      >
-        <Col className="gutter-row" span={2} />
-
-        <Col className="gutter-row" span={20}>
-          <Footer />
-        </Col>
-
-        <Col className="gutter-row" span={2} />
-      </Row>
+        <Row
+          gutter={{ xs: 10, sm: 18, md: 26, lg: 34 }}
+          style={{
+            background: "linear-gradient(to right, #22213F, #1C1B2B, #171718)",
+          }}
+        >
+          <Col className="gutter-row" span={2} />
+          <Col className="gutter-row" span={20}>
+            <Footer />
+          </Col>
+          <Col className="gutter-row" span={2} />
+        </Row>
+      </div>
     </ConfigProvider>
   );
 }
